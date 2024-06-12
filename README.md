@@ -1,2 +1,2 @@
 # Analysing-I-O-Multiplexing-Techniques
-Analysis of asynchronous &amp; synchronous I/O multiplexing techniques
+Analysis of synchronous &amp; asynchronous I/O multiplexing techniques like select() & poll() system call, epoll API(non-blocking) and fork, pthread(blocking) using seperate TCP Client/Server programs. Captured TCP packets(pcaps) communicated between the client and the server on the server’s interface using tcpdump and analysed them using python scripts for monitoring average throughput/latency as well as server process’s CPU & memory utilization
