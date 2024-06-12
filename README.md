@@ -30,4 +30,24 @@ the factorial of 20.
     - Memory  : 2048MB  
     - Disk    : 10GB - 15GB (For Guest OS)  
     - CPU     : 3cores  
-    - OS      : Any version of ubuntu/debian  
+    - OS      : Any version of ubuntu/debian
+4) Go to File->Preferences->Network in virtual box
+5) Click on network and create a new nat network
+    - Specify a name for the network
+    - Specify an ip range in CIDR notation (eg. 10.0.2.0/24)
+    - Set Supports DHCP to true
+6) Now for both the server and client vm's go to the VM settings and under Network set the **Attached To** field to **NAT Network** and *Network Name* to the name previously assigned
+7) Now proceed to install the OS on the VM's.
+
+## Server & Client Settings/Usage
+
+1) Start Client and Server VM's and run `ulimit -n 8192` to increase the max number of files that can be opened by a process at a time.
+2) untar the clients.xz file by running the command `tar -xvf clients.xz`
+3) Copy the client binary to your *Client VM* as per the target architecture
+4) When testing, run the client binary inside the Client VM as follows 
+    - For x86_64   : `./client_x86_64 <ip:port> <num_requests> <num_concurrent_connections>` 
+    - For Aarch 64 : `./client_aarch64 <ip:port> <num_requests> <num_concurrent_connections>`
+5) ip:port - Ip and port of the server (Eg. 10.0.2.5:8081)
+   num_request - Total number of requests to send per connection.
+   num_concurrent_connections - Total number of concurrent connections to be maintained between client and server
+
