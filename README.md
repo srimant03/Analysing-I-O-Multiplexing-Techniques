@@ -9,10 +9,10 @@ TCP Server Programs:-
 5. pthread()
 
 Server Function:-  
-a. Read the payload and cast it to a 64-bit unsigned integer, n.  
-b. Write a function, fact(n), to compute the factorial of the “n”; if n>20, then calculate
+1. Read the payload and cast it to a 64-bit unsigned integer, n.
+2. Write a function, fact(n), to compute the factorial of the “n”; if n>20, then calculate
 the factorial of 20.  
-c. Send the factorial result as the response message back to the client.  
+3. Send the factorial result as the response message back to the client.  
 
-Client Function:-
+Client Function:-  
 50/100/500/1000 concurrent client connections are formed each of which generate 50 requests to the server at the same time.
